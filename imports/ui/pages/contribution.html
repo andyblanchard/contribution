@@ -6,31 +6,10 @@
 			<div class="row">
 				<div class="col-md-6 col-sm-6 col-xs-12 text-center hero-text">
 					<h1>Contribution</h1>
-          {{#unless isStarted}}
-            <p>Starts February 15th 2017 at 1200 CET <br>
-              <a class="white-text" href="https://medium.com/@melonproject/melon-contribution-tutorial-10d0ce85355c#.vvd664n0b" target="_blank"><b>See Contribution Tutorial</b></a>
+            <p>Has finished 15th 2017 at 1213 CET <br>
+              <!-- <a class="white-text" href="https://medium.com/@melonproject/melon-contribution-tutorial-10d0ce85355c#.vvd664n0b" target="_blank"><b>See Contribution Tutorial</b></a> -->
             </p>
-          {{/unless}}
-          {{#if isStarted}}
-            {{#unless isTermsAccepted}}
-              <p>Please read carefully and thouroughly <br>
-                <a class="white-text" href="https://medium.com/@melonproject/melon-contribution-tutorial-10d0ce85355c#.vvd664n0b" target="_blank"><b>See Contribution Tutorial</b></a>
-              </p>
-            {{/unless}}
-          {{/if}}
-          {{#if isTermsAccepted}}
-            {{#unless isAllAccepted}}
-              <p>We want you to understand what you're in for <br>
-                <a class="white-text" href="https://medium.com/@melonproject/melon-contribution-tutorial-10d0ce85355c#.vvd664n0b" target="_blank"><b>See Contribution Tutorial</b></a>
-              </p>
-            {{/unless}}
-          {{/if}}
-          {{#if isAllAccepted}}
-            <p>The time has come for you to decide <br>
-              <a class="white-text" href="https://medium.com/@melonproject/melon-contribution-tutorial-10d0ce85355c#.vvd664n0b" target="_blank"><b>See Contribution Tutorial</b></a>
-            </p>
-          {{/if}}
-				</div>
+        </div>
         <div class="col-md-6 col-sm-6 col-xs-12 hero-summary">
           {{> network_summary}}
           {{> contribution_summary}}
@@ -43,179 +22,12 @@
     <!-- Terms&Conditions -->
 		<div class="container mp-contrib-term">
 			<div class="row">
-				<div class="col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2">
+				<div class="col-md-8 col-md-offset-2 col-lg-8 col-lg-offset-2">
           <!-- Terms Accepted -->
-					<h2 class="contrib-title">Terms and Conditions</h2>
-          <p><b>Important Notice:</b>
-            If you created a signature before February 14th 1100 CET, please generate a new one to participate in the contribution period.
-            If you use an old signature with your transaction the transaction will get rejected by the contribution smart contract and any Ether sent will get returned.
-          </p>
-					<div class="form-checkbox">
-						<p>I hereby confirm to have read and understood the following document:</p>
-						<div class="checkbox">
-							<label>
-								<input {{whenECParamsSet}} type="checkbox" class="filled-in" id="melon-terms" >
-								<span class="input-check"></span>
-                <a href="#" onclick="window.open('terms.pdf', '_blank', 'fullscreen=yes'); return false;">Melon Contribution Terms</a>
-							</label>
-						</div>
-					</div>
-					<div class="form-checkbox">
-						<p>I hereby acknowledge the following points:</p>
-						<div class="checkbox">
-							<label>
-								<input {{whenECParamsSet}} type="checkbox" class="filled-in" id="no-equity" >
-								<span class="input-check"></span>
-								Contributor does not receive equity in Melonport AG.
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-								<input {{whenECParamsSet}} type="checkbox" class="filled-in" id="workshop" >
-								<span class="input-check"></span>
-								Contributions will be used to fullfill the workshop mission.
-							</label>
-						</div>
-					</div>
-					<div class="form-checkbox">
-						<p>I hereby confirm to be:</p>
-						<div class="checkbox">
-							<label>
-								<input {{whenECParamsSet}} type="checkbox" class="filled-in" id="citizen" >
-								<span class="input-check"></span>
-								Non US citizen nor signing on behalf of a US citizen.
-							</label>
-						</div>
-					</div>
-					<div class="form-checkbox">
-            <!-- Documents Read -->
-						<p>I hereby confirm to have read the following documents:</p>
-						<div class="checkbox">
-							<label>
-								<input {{whenECParamsSet}} type="checkbox" class="filled-in" id="melon-greenpaper" >
-								<span class="input-check"></span>
-                <a href="#" onclick="window.open('melonprotocol.pdf', '_blank', 'fullscreen=yes'); return false;">Melon Protocol Green Paper</a>
-							</label>
-						</div>
-						<div class="checkbox">
-							<label>
-								<input {{whenECParamsSet}} type="checkbox" class="filled-in" id="melon-specifications" >
-								<span class="input-check"></span>
-                <a href="#" onclick="window.open('specs.pdf', '_blank', 'fullscreen=yes'); return false;">Melon Specifications</a>
-							</label>
-						</div>
-					</div>
+					<h2 class="contrib-title">Contribution Period has finished</h2>
+          <p>Contribution period finished in a record breaking <b>13 minutes and 23 seconds</b>. Thank you for the trust in us and we're looking forward to build great things.</p>
 				</div>
 			</div>
 		</div>
-
-		<!-- confirm section -->
-		<div class="container mp-contrib-confirm">
-			<div class="row">
-				<div class="col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2">
-          <form class="signature">
-  					<h2 class="contrib-title">Confirmation</h2>
-  					<p>Please insert the Ethereum address with which you would like to contribute if and only if you have read, acknowledged and agreed upon all of the above terms and conditions.</p>
-  					<div class="form-inline mp-form">
-  						<div class="form-group col-md-10 col-sm-10 col-xs-10 has-feedback">
-                {{#if isClientConnected}}
-                  <input {{whenECParamsSet}} type="text" class="form-control" id="contribution_address" value = "{{clientAddress}}" required >
-                {{else}}
-                  <input {{whenECParamsSet}} type="text" class="form-control" id="contribution_address" placeholder="0xaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa" required >
-                {{/if}}
-  							<span style="color:#4e4e4e" class="form-control-feedback" id="contribution-text" aria-hidden="true">Your Ethereum Address</span>
-  							<span class="form-control-feedback" id="success-message" aria-hidden="true"></span>
-  							<span style="color:#1189c6" class="form-control-feedback" id="error-message" aria-hidden="true"></span>
-  						</div>
-              {{#if isAllAccepted}}
-                {{#if isECParamsSet}}
-                  <button type="submit" class="btn col-md-2 col-sm-2 col-xs-2 btn-main"><a href="#results">SHOW RESULT</a></button>
-                {{else}}
-                  <button type="submit" class="signature btn col-md-2 col-sm-2 col-xs-2 btn-main" href="#results">I CONFIRM</button>
-                {{/if}}
-              {{else}}
-                <button type="submit" class="disabled btn col-md-2 col-sm-2 col-xs-2 btn-main" href="#results">I CONFIRM</button>
-              {{/if}}
-  					</div>
-          </form>
-				</div>
-			</div>
-		</div>
-
-    {{#if isECParamsSet}}
-      {{#if isBetweenStartAndEndTime}}
-        {{#if isClientConnected}}
-          {{#if isMainNetwork}}
-            <!-- send fund section -->
-            <div class="container mp-contrib-send">
-              <div class="row">
-                <div class="col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                  <div id="results" class="section scrollspy">
-                    <form class="amount">
-                      <h2 class="contrib-title">Send Funds</h2>
-                      <p>Please insert the amount of Ether you'd like to contribute from your Ethereum address to Melon.</p>
-                      <div class="form-inline mp-form">
-                        <div class="form-group col-md-10 col-sm-10 col-xs-10 has-feedback">
-                          <input type="number" step="any" class="form-control" id="ether_amount" placeholder="Ether Amount">
-                        </div>
-                        <button type="submit" class="amount btn col-md-2 col-sm-2 col-xs-2 btn-main">SEND</button>
-                      </div>
-                      <br>
-                    </form>
-                  </div>
-                </div>
-                <div class="col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                  <p id='txStatus'></p>
-                </div>
-              </div>
-            </div>
-          {{else}}
-            <div class="container mp-contrib-send">
-              <div class="row">
-                <div class="col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2">
-                  <div id="results" class="section scrollspy">
-                    <h2 class="contrib-title">Use the Ethereum main network to send funds directly</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          {{/if}} <!-- isMainNetwork -->
-        {{/if}} <!-- isClientConnected -->
-      {{/if}} <!-- isBetweenStartAndEndTime -->
-
-      {{#unless isMainNetwork}}
-        <!-- Transaction Object Section -->
-    		<div class="container mp-contrib-sign">
-    			<div class="row">
-    				<div class="col-md-9 col-md-offset-1 col-lg-8 col-lg-offset-2 col-sm-12 col-xs-12">
-              <div id="results" class="section scrollspy">
-      					<h2 class="contrib-title">{{#if isBetweenStartAndEndTime}}Signature: Transaction Data{{else}}Signature: Schedule a Transaction{{/if}}</h2>
-                {{#unless isBetweenStartAndEndTime}}
-                  <p>Contribution has not started yet. Please wait <b>{{timeUntillStart}}</b> or <b>schedule a transaction with Parity</b>.</p>
-                {{/unless}}
-      					<p>With these parameters you can contribute to Melon.</p>
-      					<ul>
-      						<li>From:
-                    <strong>{{getContributionAddress}}</strong>
-                  </li>
-      						<li>To:
-                    <strong>0x3BF541f87056D134E0109BE1Be92978b26Cb09e0</strong>
-                  </li>
-      						<li>Value:
-                    <strong>Amount you'd like to contribute</strong>
-                  </li>
-      						<li>Gas:
-                    <strong>100000</strong>
-                  </li>
-      						<li>Data (to be included in your transaction):</li>
-                  <li><textarea rows="4" cols="30">{{getTxData}}</textarea></li>
-      					</ul>
-      					<p>To contribute you can either use Parity, MetaMask, Mist or MyEtherWallet.</p>
-      				</div>
-    				</div>
-    			</div>
-    		</div>
-      {{/unless}} <!-- isMainNetwork -->
-    {{/if}} <!-- isECParamsSet -->
   </section>
 </template>
